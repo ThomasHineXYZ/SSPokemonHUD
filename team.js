@@ -1,4 +1,4 @@
-{
+var TeamInfo = {
   "TeamMember1": {
     "DexNo": 68,
     "Nickname": "Sven",
