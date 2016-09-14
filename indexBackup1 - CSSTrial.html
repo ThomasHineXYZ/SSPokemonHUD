@@ -1,0 +1,119 @@
+<html>
+
+<!--<head><base href="S:\STREAM JUNK\pkmn_project\use\"></head>-->
+	<head><!--<base href="C:\Users\Thomas\Desktop\SSPokemonHUD\">--></head>
+	
+	<script>
+
+		// Pokemon ID (Three digits), Pokeball Type, Background Colour?, Nickname
+		
+		var TeamMember1 = ["068", "ultra", "purple", "Sven"];
+		var TeamMember2 = ["103", "master", "silver", "Treant"];
+		var TeamMember3 = ["068", "ultra", "purple", "Sven"];
+		var TeamMember4 = ["103", "master", "silver", "Treant"];
+		
+		
+	
+		function PopulateTeam(){
+			document.getElementById("Slot1BG").src = "bg_colors/"+TeamMember1[2]+".jpg";
+			document.getElementById("Slot1Sprite").src = "sprites/"+TeamMember1[0]+".gif";
+			document.getElementById("Slot1Nickname").innerHTML = TeamMember1[3];
+			document.getElementById("Slot1Ball").src = "balls/"+TeamMember1[1]+".png";
+			
+			document.getElementById("Slot2BG").src = "bg_colors/"+TeamMember2[2]+".jpg";
+			document.getElementById("Slot2Sprite").src = "sprites/"+TeamMember2[0]+".gif";
+			document.getElementById("Slot2Nickname").innerHTML = TeamMember2[3];
+			document.getElementById("Slot2Ball").src = "balls/"+TeamMember2[1]+".png";
+
+			document.getElementById("Slot3BG").src = "bg_colors/"+TeamMember2[2]+".jpg";
+			document.getElementById("Slot3Sprite").src = "sprites/"+TeamMember2[0]+".gif";
+			document.getElementById("Slot3Nickname").innerHTML = TeamMember2[3];
+			document.getElementById("Slot3Ball").src = "balls/"+TeamMember2[1]+".png";
+			
+			document.getElementById("Slot4BG").src = "bg_colors/"+TeamMember4[2]+".jpg";
+			document.getElementById("Slot4Sprite").src = "sprites/"+TeamMember4[0]+".gif";
+			document.getElementById("Slot4Nickname").innerHTML = TeamMember4[3];
+			document.getElementById("Slot4Ball").src = "balls/"+TeamMember4[1]+".png";
+			
+		}
+	
+	//sprites/000.gif
+	</script>
+
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+
+
+	<body onload="PopulateTeam()">
+		<!-- Main frame overlay -->
+		<!--<IMG STYLE="position:absolute; z-index:14" SRC="bg_colors/main_frame.png">-->
+
+		<!-- Sprite ID -->
+		<!-- Pokeball type -->
+		<!-- Background color -->
+		<!-- Nickname -->
+
+
+					<div>
+						<IMG id="Slot1BG" style="position: absolute; float: left; left: 0px; top: 20px; z-index: -1; -webkit-transform: scale(1, 1); height: 100px;" SRC="">
+						<IMG id="Slot1Sprite" style="-webkit-transform: scale(-1, 1)" SRC="">
+						<font STYLE="font-size:50px" face="Pokemon GB" color="white"><div id="Slot1Nickname" style="display: inline; text-align: left;"></div></font>
+						<IMG id="Slot1Ball" STYLE="-webkit-transform: scale(1, 1); float: right; width: 48px; PADDING-TOP: 15px;" SRC="">
+					</div>
+
+					<div>
+						<IMG id="Slot2BG" style="position: absolute; float: right; right: 0px; top: 110px; z-index: -1; -webkit-transform: scale(-1, 1); height: 100px;" SRC="">
+						<IMG id="Slot2Sprite" style=" float: right; -webkit-transform: scale(1, 1); " SRC="">
+						<font STYLE="font-size:50px" face="Pokemon GB" color="white"><div id="Slot2Nickname" style="display: inline; text-align: right; float: right; padding-top: 50px;"></div></font>
+						<IMG id="Slot2Ball" STYLE="-webkit-transform: scale(-1, 1); float: left; width: 48px" SRC="">
+					</div>
+
+					<div>
+						<IMG id="Slot3BG" style="position: absolute; float: left; left: 0px; top: 200px; z-index: -1; -webkit-transform: scale(1, 1); height: 100px;" SRC="">
+						<IMG id="Slot3Sprite" style="-webkit-transform: scale(-1, 1)" SRC="">
+						<font STYLE="font-size:50px" face="Pokemon GB" color="white"><div id="Slot3Nickname" style="display: inline; text-align: left;"></div></font>
+						<IMG id="Slot3Ball" STYLE="-webkit-transform: scale(1, 1); float: right; width: 48px; PADDING-TOP: 15px;" SRC="">
+					</div>
+
+
+			
+		
+		<!-- Slot 1 -->
+<!-- 		<IMG STYLE="position:absolute; BOTTOM:940px; LEFT:23px; z-index:12; -webkit-transform: scale(-1, 1)" SRC="sprites/068.gif">
+		<IMG STYLE="position:absolute; BOTTOM:970px; RIGHT:1151px; z-index:15; -webkit-transform: scale(1, 1)" SRC="balls/ultra.png">
+		<IMG STYLE="position:absolute; BOTTOM:939px; LEFT:20px; z-index:11; -webkit-transform: scale(1, 1)" SRC="bg_colors/purple.jpg">
+		<font STYLE="position:absolute; BOTTOM:956px; LEFT:123px; z-index:13; font-size:50px" face="Pokemon GB" color="white">Sven</font>
+ -->
+		<!-- Slot 2 -->
+<!-- 		<IMG STYLE="position:absolute; BOTTOM:845px; RIGHT:1167px; z-index:10; -webkit-transform: scale(1, 1)" SRC="sprites/197.gif">
+		<IMG STYLE="position:absolute; BOTTOM:875px; LEFT:6px; z-index:15; -webkit-transform: scale(-1, 1)" SRC="balls/poke.png">
+		<IMG STYLE="position:absolute; BOTTOM:844px; RIGHT:1165px; z-index:9; -webkit-transform: scale(-1, 1)" SRC="bg_colors/yellow.jpg">
+		<font STYLE="position:absolute; BOTTOM:861px; RIGHT:1275px; z-index:13; font-size:50px" face="Pokemon GB" color="white">Free cat</font>
+ -->
+		<!-- Slot 3 -->
+<!-- 		<IMG STYLE="position:absolute; BOTTOM:750px; LEFT:23px; z-index:8; -webkit-transform: scale(-1, 1)" SRC="sprites/103.gif">
+		<IMG STYLE="position:absolute; BOTTOM:780px; RIGHT:1151px; z-index:15; -webkit-transform: scale(1, 1)" SRC="balls/great.png">
+		<IMG STYLE="position:absolute; BOTTOM:749px; LEFT:20px; z-index:7; -webkit-transform: scale(1, 1)" SRC="bg_colors/green.jpg">
+		<font STYLE="position:absolute; BOTTOM:766px; LEFT:123px; z-index:13; font-size:50px" face="Pokemon GB" color="white">Treant</font>
+ -->
+		<!-- Slot 4 -->
+<!-- 		<IMG STYLE="position:absolute; BOTTOM:655px; RIGHT:1167px; z-index:6; -webkit-transform: scale(1, 1)" SRC="sprites/025.gif">
+		<IMG STYLE="position:absolute; BOTTOM:685px; LEFT:6px; z-index:15; -webkit-transform: scale(-1, 1)" SRC="balls/ultra.png">
+		<IMG STYLE="position:absolute; BOTTOM:654px; RIGHT:1165px; z-index:5; -webkit-transform: scale(-1, 1)" SRC="bg_colors/yellow.jpg">
+		<font STYLE="position:absolute; BOTTOM:671px; RIGHT:1275px; z-index:13; font-size:50px" face="Pokemon GB" color="white">Garbage</font>
+ -->
+		<!-- Slot 5 -->
+<!-- 		<IMG STYLE="position:absolute; BOTTOM:560px; LEFT:23px; z-index:4; -webkit-transform: scale(-1, 1)" SRC="sprites/227.gif">
+		<IMG STYLE="position:absolute; BOTTOM:590px; RIGHT:1151px; z-index:15; -webkit-transform: scale(1, 1)" SRC="balls/ultra.png">
+		<IMG STYLE="position:absolute; BOTTOM:559px; LEFT:20px; z-index:3; -webkit-transform: scale(1, 1)" SRC="bg_colors/silver.jpg">
+		<font STYLE="position:absolute; BOTTOM:576px; LEFT:123px; z-index:13; font-size:50px" face="Pokemon GB" color="white">Goose</font>
+ -->
+		<!-- Slot 6 -->
+<!-- 		<IMG STYLE="position:absolute; BOTTOM:465px; RIGHT:1167px; z-index:2; -webkit-transform: scale(1, 1)" SRC="sprites/073.gif">
+		<IMG STYLE="position:absolute; BOTTOM:495px; LEFT:6px; z-index:15; -webkit-transform: scale(-1, 1)" SRC="balls/ultra.png">
+		<IMG STYLE="position:absolute; BOTTOM:464px; RIGHT:1165px; z-index:1; -webkit-transform: scale(-1, 1)" SRC="bg_colors/blue.jpg">
+		<font STYLE="position:absolute; BOTTOM:481px; RIGHT:1275px; z-index:13; font-size:50px" face="Pokemon GB" color="white">Dopesquid</font>
+ -->
+	</body>
+
+</html>

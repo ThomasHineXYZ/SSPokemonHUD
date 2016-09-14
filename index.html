@@ -1,0 +1,221 @@
+<html>
+	<head>
+		<!--<base href="S:\STREAM JUNK\pkmn_project\use\">-->
+		<!--<base href="C:\Users\Thomas\Desktop\SSPokemonHUD\">-->
+		<link rel="stylesheet" type="text/css" href="style.css">	
+	</head>
+	<script>
+
+		// Pokemon ID (Three digits), Nickname, Pokeball Type, Is Shiny, Background Colour, Level
+	
+		// If no Pokemon  ["000", "", "none", 0, "needs a colour", 0];
+		var TeamMember1 = ["068", "Sven", "ultra", 0, "purple", 100];
+		var TeamMember2 = ["103", "Treant", "master", 0, "silver", 83];
+		var TeamMember3 = ["025", "PeekAtChu", "great", 0, "brown", 93];
+		var TeamMember4 = ["073", "Dopesquid", "poke", 0, "yellow", 5];
+		var TeamMember5 = ["382", "BlueFish", "heavy", 1, "pink", 7];
+		var TeamMember6 = ["384", "Dragon", "timer", 0, "blue", 70];
+
+		
+		
+		function PopulateTeam(){
+		//Slot 1
+			document.getElementById("Slot1BG").src = "bg_colors/"+TeamMember1[4]+".jpg"; //Sets the Pokeball Background behind the info
+			if (TeamMember1[0] != 0) {
+				if (TeamMember1[3] == 0) { 
+					document.getElementById("Slot1Sprite").src = "sprites/"+TeamMember1[0]+".gif"; //If not shiny, set as so
+				}else if (TeamMember1[3] == 1){
+					document.getElementById("Slot1Sprite").src = "sprites_s/"+TeamMember1[0]+".gif"; //If shiny, set as so
+				}
+			}
+			document.getElementById("Slot1Ball").src = "balls/"+TeamMember1[2]+".png"; //Sets which Pokeball you caught the Pokemon in
+			document.getElementById("Slot1Nickname").innerHTML = TeamMember1[1]; //Sets the nickname of the Pokemon
+			if (TeamMember1[5] == 0) { 
+				document.getElementById("Slot1Level").innerHTML = ""; //If set to 0, don't show Level: XXX
+			}else{
+				document.getElementById("Slot1Level").innerHTML = "Level: " + TeamMember1[5]; //If set to other then 0, show Level: XXX
+			}
+			
+		//Slot 2
+			document.getElementById("Slot2BG").src = "bg_colors/"+TeamMember2[4]+".jpg"; //Sets the Pokeball Background behind the info
+			if (TeamMember2[0] != 0) {
+				if (TeamMember2[3] == 0) { 
+					document.getElementById("Slot2Sprite").src = "sprites/"+TeamMember2[0]+".gif"; //If not shiny, set as so
+				}else if (TeamMember2[3] == 1){
+					document.getElementById("Slot2Sprite").src = "sprites_s/"+TeamMember2[0]+".gif"; //If shiny, set as so
+				}
+			}
+			document.getElementById('Slot2Sprite').style.right = window.innerWidth - 753 + "px";
+			document.getElementById("Slot2Ball").src = "balls/"+TeamMember2[2]+".png"; //Sets which Pokeball you caught the Pokemon in
+			document.getElementById("Slot2Nickname").innerHTML = TeamMember2[1]; //Sets the nickname of the Pokemon
+			if (TeamMember2[5] == 0) { 
+				document.getElementById("Slot2Level").innerHTML = ""; //If set to 0, don't show Level: XXX
+			}else{
+				document.getElementById("Slot2Level").innerHTML = "Level: " + TeamMember2[5]; //If set to other then 0, show Level: XXX
+			}			
+		//Slot 3
+			document.getElementById("Slot3BG").src = "bg_colors/"+TeamMember3[4]+".jpg"; //Sets the Pokeball Background behind the info
+			if (TeamMember3[0] != 0) {
+				if (TeamMember3[3] == 0) { 
+					document.getElementById("Slot3Sprite").src = "sprites/"+TeamMember3[0]+".gif"; //If not shiny, set as so
+				}else if (TeamMember3[3] == 1){
+					document.getElementById("Slot3Sprite").src = "sprites_s/"+TeamMember3[0]+".gif"; //If shiny, set as so
+				}
+			}
+			document.getElementById("Slot3Ball").src = "balls/"+TeamMember3[2]+".png"; //Sets which Pokeball you caught the Pokemon in
+			document.getElementById("Slot3Nickname").innerHTML = TeamMember3[1]; //Sets the nickname of the Pokemon
+			if (TeamMember3[5] == 0) { 
+				document.getElementById("Slot3Level").innerHTML = ""; //If set to 0, don't show Level: XXX
+			}else{
+				document.getElementById("Slot3Level").innerHTML = "Level: " + TeamMember3[5]; //If set to other then 0, show Level: XXX
+			}			
+		//Slot 4			
+			document.getElementById("Slot4BG").src = "bg_colors/"+TeamMember4[4]+".jpg"; //Sets the Pokeball Background behind the info
+			if (TeamMember4[0] != 0) {
+				if (TeamMember4[3] == 0) { 
+					document.getElementById("Slot4Sprite").src = "sprites/"+TeamMember4[0]+".gif"; //If not shiny, set as so
+				}else if (TeamMember4[3] == 1){
+					document.getElementById("Slot4Sprite").src = "sprites_s/"+TeamMember4[0]+".gif"; //If shiny, set as so
+				}
+			}
+			document.getElementById('Slot4Sprite').style.right = window.innerWidth - 753 + "px";
+			document.getElementById("Slot4Ball").src = "balls/"+TeamMember4[2]+".png"; //Sets which Pokeball you caught the Pokemon in
+			document.getElementById("Slot4Nickname").innerHTML = TeamMember4[1]; //Sets the nickname of the Pokemon
+			if (TeamMember4[5] == 0) { 
+				document.getElementById("Slot4Level").innerHTML = ""; //If set to 0, don't show Level: XXX
+			}else{
+				document.getElementById("Slot4Level").innerHTML = "Level: " + TeamMember4[5]; //If set to other then 0, show Level: XXX
+			}			
+		//Slot 5			
+			document.getElementById("Slot5BG").src = "bg_colors/"+TeamMember5[4]+".jpg"; //Sets the Pokeball Background behind the info
+			if (TeamMember5[0] != 0) {
+				if (TeamMember5[3] == 0) { 
+					document.getElementById("Slot5Sprite").src = "sprites/"+TeamMember5[0]+".gif"; //If not shiny, set as so
+				}else if (TeamMember5[3] == 1){
+					document.getElementById("Slot5Sprite").src = "sprites_s/"+TeamMember5[0]+".gif"; //If shiny, set as so
+				}
+			}
+			document.getElementById("Slot5Ball").src = "balls/"+TeamMember5[2]+".png"; //Sets which Pokeball you caught the Pokemon in
+			document.getElementById("Slot5Nickname").innerHTML = TeamMember5[1]; //Sets the nickname of the Pokemon
+			if (TeamMember5[5] == 0) { 
+				document.getElementById("Slot5Level").innerHTML = ""; //If set to 0, don't show Level: XXX
+			}else{
+				document.getElementById("Slot5Level").innerHTML = "Level: " + TeamMember5[5]; //If set to other then 0, show Level: XXX
+			}			
+		//Slot 6			
+			document.getElementById("Slot6BG").src = "bg_colors/"+TeamMember6[4]+".jpg"; //Sets the Pokeball Background behind the info
+			if (TeamMember6[0] != 0) {
+				if (TeamMember6[3] == 0) { 
+					document.getElementById("Slot6Sprite").src = "sprites/"+TeamMember6[0]+".gif"; //If not shiny, set as so
+				}else if (TeamMember6[3] == 1){
+					document.getElementById("Slot6Sprite").src = "sprites_s/"+TeamMember6[0]+".gif"; //If shiny, set as so
+					document.getElementById("Slot6Sprite").src = "sprites_s/"+TeamMember6[0]+".gif"; //If shiny, set as so
+				}
+			}
+			document.getElementById('Slot6Sprite').style.right = window.innerWidth - 753 + "px";
+			document.getElementById("Slot6Ball").src = "balls/"+TeamMember6[2]+".png"; //Sets which Pokeball you caught the Pokemon in
+			document.getElementById("Slot6Nickname").innerHTML = TeamMember6[1]; //Sets the nickname of the Pokemon
+			if (TeamMember6[5] == 0) { 
+				document.getElementById("Slot6Level").innerHTML = ""; //If set to 0, don't show Level: XXX
+			}else{
+				document.getElementById("Slot6Level").innerHTML = "Level: " + TeamMember6[5]; //If set to other then 0, show Level: XXX
+			}		}
+		
+	//document.getElementById('Slot6Sprite').height
+	//Drop Shadow code for adding later possibly
+	//-webkit-filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9)); filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9));
+	</script>
+
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+	<body onload="PopulateTeam()">
+		<!-- Main frame overlay -->
+		<!--<IMG STYLE="position:absolute; z-index:14" SRC="bg_colors/main_frame.png">-->
+
+		<!-- Sprite ID -->
+		<!-- Pokeball type -->
+		<!-- Background color -->
+		<!-- Nickname -->
+		
+		<!-- Slot 1 -->
+		<IMG id="Slot1Sprite" SRC="">
+		<IMG id="Slot1Ball" SRC="">
+		<IMG id="Slot1BG" SRC="">
+		<div id="Slot1Nickname"></div>
+		<div id="Slot1Level"></div>
+
+		<!-- Slot 2 -->
+		<IMG id="Slot2Sprite" SRC="">
+		<IMG id="Slot2Ball" SRC="">
+		<IMG id="Slot2BG" SRC="">
+		<div id="Slot2Nickname"></div>
+		<div id="Slot2Level"></div>
+
+		<!-- Slot 3 -->
+		<IMG id="Slot3Sprite" SRC="">
+		<IMG id="Slot3Ball" SRC="">
+		<IMG id="Slot3BG" SRC="">
+		<div id="Slot3Nickname"></div>
+		<div id="Slot3Level"></div>
+
+		<!-- Slot 4 -->
+		<IMG id="Slot4Sprite" SRC="">
+		<IMG id="Slot4Ball" SRC="">
+		<IMG id="Slot4BG" SRC="">
+		<div id="Slot4Nickname"></div>
+		<div id="Slot4Level"></div>
+
+		<!-- Slot 5 -->
+		<IMG id="Slot5Sprite" SRC="">
+		<IMG id="Slot5Ball" SRC="">
+		<IMG id="Slot5BG" SRC="">
+		<div id="Slot5Nickname"></div>
+		<div id="Slot5Level"></div>
+
+		<!-- Slot 6 -->
+		<IMG id="Slot6Sprite" SRC="">
+		<IMG id="Slot6Ball" SRC="">
+		<IMG id="Slot6BG" SRC="">
+		<div id="Slot6Nickname"></div>
+		<div id="Slot6Level"></div>
+
+		<!-- Slot 1 -->
+<!-- 		<IMG STYLE="position:absolute; BOTTOM:940px; LEFT:23px; z-index:12; -webkit-transform: scale(-1, 1)" SRC="sprites/068.gif">
+		<IMG STYLE="position:absolute; BOTTOM:970px; RIGHT:1151px; z-index:15; -webkit-transform: scale(1, 1)" SRC="balls/ultra.png">
+		<IMG STYLE="position:absolute; BOTTOM:939px; LEFT:20px; z-index:11; -webkit-transform: scale(1, 1)" SRC="bg_colors/purple.jpg">
+		<font STYLE="position:absolute; BOTTOM:956px; LEFT:123px; z-index:13; font-size:50px" face="Pokemon GB" color="white">Sven</font>
+ -->
+		<!-- Slot 2 -->
+<!-- 		<IMG STYLE="position:absolute; BOTTOM:845px; RIGHT:1167px; z-index:10; -webkit-transform: scale(1, 1)" SRC="sprites/197.gif">
+		<IMG STYLE="position:absolute; BOTTOM:875px; LEFT:6px; z-index:15; -webkit-transform: scale(-1, 1)" SRC="balls/poke.png">
+		<IMG STYLE="position:absolute; BOTTOM:844px; RIGHT:1165px; z-index:9; -webkit-transform: scale(-1, 1)" SRC="bg_colors/yellow.jpg">
+		<font STYLE="position:absolute; BOTTOM:861px; RIGHT:1275px; z-index:13; font-size:50px" face="Pokemon GB" color="white">Free cat</font>
+ -->
+		<!-- Slot 3 -->
+<!-- 		<IMG STYLE="position:absolute; BOTTOM:750px; LEFT:23px; z-index:8; -webkit-transform: scale(-1, 1)" SRC="sprites/103.gif">
+		<IMG STYLE="position:absolute; BOTTOM:780px; RIGHT:1151px; z-index:15; -webkit-transform: scale(1, 1)" SRC="balls/great.png">
+		<IMG STYLE="position:absolute; BOTTOM:749px; LEFT:20px; z-index:7; -webkit-transform: scale(1, 1)" SRC="bg_colors/green.jpg">
+		<font STYLE="position:absolute; BOTTOM:766px; LEFT:123px; z-index:13; font-size:50px" face="Pokemon GB" color="white">Treant</font>
+ -->
+		<!-- Slot 4 -->
+<!-- 		<IMG STYLE="position:absolute; BOTTOM:655px; RIGHT:1167px; z-index:6; -webkit-transform: scale(1, 1)" SRC="sprites/025.gif">
+		<IMG STYLE="position:absolute; BOTTOM:685px; LEFT:6px; z-index:15; -webkit-transform: scale(-1, 1)" SRC="balls/ultra.png">
+		<IMG STYLE="position:absolute; BOTTOM:654px; RIGHT:1165px; z-index:5; -webkit-transform: scale(-1, 1)" SRC="bg_colors/yellow.jpg">
+		<font STYLE="position:absolute; BOTTOM:671px; RIGHT:1275px; z-index:13; font-size:50px" face="Pokemon GB" color="white">Garbage</font>
+ -->
+		<!-- Slot 5 -->
+<!-- 		<IMG STYLE="position:absolute; BOTTOM:560px; LEFT:23px; z-index:4; -webkit-transform: scale(-1, 1)" SRC="sprites/227.gif">
+		<IMG STYLE="position:absolute; BOTTOM:590px; RIGHT:1151px; z-index:15; -webkit-transform: scale(1, 1)" SRC="balls/ultra.png">
+		<IMG STYLE="position:absolute; BOTTOM:559px; LEFT:20px; z-index:3; -webkit-transform: scale(1, 1)" SRC="bg_colors/silver.jpg">
+		<font STYLE="position:absolute; BOTTOM:576px; LEFT:123px; z-index:13; font-size:50px" face="Pokemon GB" color="white">Goose</font>
+ -->
+		<!-- Slot 6 -->
+<!-- 		<IMG STYLE="position:absolute; BOTTOM:465px; RIGHT:1167px; z-index:2; -webkit-transform: scale(1, 1)" SRC="sprites/073.gif">
+		<IMG STYLE="position:absolute; BOTTOM:495px; LEFT:6px; z-index:15; -webkit-transform: scale(-1, 1)" SRC="balls/ultra.png">
+		<IMG STYLE="position:absolute; BOTTOM:464px; RIGHT:1165px; z-index:1; -webkit-transform: scale(-1, 1)" SRC="bg_colors/blue.jpg">
+		<font STYLE="position:absolute; BOTTOM:481px; RIGHT:1275px; z-index:13; font-size:50px" face="Pokemon GB" color="white">Dopesquid</font>
+ -->
+		
+	</body>
+
+</html>

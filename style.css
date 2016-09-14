@@ -1,0 +1,273 @@
+/* -----------------------------------Team Member 1 CSS Info */
+	#Slot1Sprite {
+		position:absolute;
+		BOTTOM:940px;
+		LEFT:23px;
+		/*HEIGHT:90px;*/
+		z-index:5;
+		/*-webkit-filter: brightness(0.5); - for reference later, maybe for shadow Pokemon*/
+		-webkit-transform: scale(-1, 1);
+	}
+	
+	#Slot1Ball {
+		position:absolute;
+		BOTTOM:940px;
+		RIGHT:1165px;
+		WIDTH:48px;
+		z-index:2;
+		-webkit-transform: scale(1, 1);
+	}
+	
+	#Slot1BG {
+		position:absolute;
+		BOTTOM:939px;
+		LEFT:20px;
+		z-index:1;
+		-webkit-transform: scale(1, 1);
+	}
+	
+	#Slot1Nickname {
+		position:absolute;
+		BOTTOM:956px;
+		LEFT:123px;
+		z-index:3;
+		font-size:50px;
+		color: white;
+		font-family: "Pokemon GB";
+	}
+
+	#Slot1Level {
+		position:absolute;
+		BOTTOM:1005px;
+		LEFT:600px;
+		z-index:3;
+		font-size:15px;
+		color: white;
+		font-family: "Pokemon GB";
+	}
+	
+/* -----------------------------------Team Member 2 CSS Info */
+	#Slot2Sprite {
+		position:absolute;
+		BOTTOM:845px;
+		RIGHT:1167px;
+		z-index:5;
+		-webkit-transform: scale(1, 1);
+	}
+	
+	#Slot2Ball {
+		position:absolute;
+		BOTTOM:845px;
+		LEFT:20px;
+		WIDTH:48px;
+		z-index:2;
+		-webkit-transform: scale(-1, 1);
+	}
+	
+	#Slot2BG {
+		position:absolute;
+		BOTTOM:844px;
+		LEFT:20px;
+		z-index:1;
+		-webkit-transform: scale(-1, 1);
+	}
+	
+	#Slot2Nickname {
+		position:absolute;
+		BOTTOM:861px;
+		RIGHT:1275px;
+		z-index:3;
+		font-size:50px;
+		color: white;
+		font-family: "Pokemon GB";
+	}
+
+	#Slot2Level {
+		position:absolute;
+		BOTTOM:910px;
+		LEFT:30px;
+		z-index:3;
+		font-size:15px;
+		color: white;
+		font-family: "Pokemon GB";
+	}
+	
+/* -----------------------------------Team Member 3 CSS Info */
+	#Slot3Sprite {
+		position:absolute;
+		BOTTOM:750px;
+		LEFT:23px;
+		z-index:5;
+		-webkit-transform: scale(-1, 1);
+	}
+	
+	#Slot3Ball {
+		position:absolute;
+		BOTTOM:750px;
+		RIGHT:1165px;
+		WIDTH:48px;
+		z-index:2;
+		-webkit-transform: scale(1, 1);
+	}
+	
+	#Slot3BG {
+		position:absolute;
+		BOTTOM:749px;
+		LEFT:20px;
+		z-index:1;
+		-webkit-transform: scale(1, 1);
+	}
+	
+	#Slot3Nickname {
+		position:absolute;
+		BOTTOM:766px;
+		LEFT:123px;
+		z-index:3;
+		font-size:50px;
+		color: white;
+		font-family: "Pokemon GB";
+	}
+	
+	#Slot3Level {
+		position:absolute;
+		BOTTOM:815px;
+		LEFT:600px;
+		z-index:3;
+		font-size:15px;
+		color: white;
+		font-family: "Pokemon GB";
+	}
+	
+/* -----------------------------------Team Member 4 CSS Info */
+	#Slot4Sprite {
+		position:absolute;
+		BOTTOM:655px;
+		RIGHT:1167px;
+		z-index:5;
+		-webkit-transform: scale(1, 1);
+	}
+	
+	#Slot4Ball {
+		position:absolute;
+		BOTTOM:655px;
+		LEFT:20px;
+		WIDTH:48px;
+		z-index:2;
+		-webkit-transform: scale(-1, 1);
+	}
+	
+	#Slot4BG {
+		position:absolute;
+		BOTTOM:654px;
+		LEFT:20px;
+		z-index:1;
+		-webkit-transform: scale(-1, 1);
+	}
+	
+	#Slot4Nickname {
+		position:absolute;
+		BOTTOM:671px;
+		RIGHT:1275px;
+		z-index:3;
+		font-size:50px;
+		color: white;
+		font-family: "Pokemon GB";
+	}
+	#Slot4Level {
+		position:absolute;
+		BOTTOM:720px;
+		LEFT:30px;
+		z-index:3;
+		font-size:15px;
+		color: white;
+		font-family: "Pokemon GB";
+	}
+/* -----------------------------------Team Member 5 CSS Info */
+	#Slot5Sprite {
+		position:absolute;
+		BOTTOM:560px;
+		LEFT:23px;
+		z-index:5;
+		-webkit-transform: scale(-1, 1);
+	}
+	
+	#Slot5Ball {
+		position:absolute;
+		BOTTOM:560px;
+		RIGHT:1165px;
+		WIDTH:48px;
+		z-index:2;
+		-webkit-transform: scale(1, 1);
+	}
+	
+	#Slot5BG {
+		position:absolute;
+		BOTTOM:559px;
+		LEFT:20px;
+		z-index:1;
+		-webkit-transform: scale(1, 1)
+	}
+	
+	#Slot5Nickname {
+		position:absolute;
+		BOTTOM:576px;
+		LEFT:123px;
+		z-index:3;
+		font-size:50px;
+		color: white;
+		font-family: "Pokemon GB";
+	}
+
+	#Slot5Level {
+		position:absolute;
+		BOTTOM:625px;
+		LEFT:600px;
+		z-index:3;
+		font-size:15px;
+		color: white;
+		font-family: "Pokemon GB";
+	}
+	/* -----------------------------------Team Member 5 CSS Info */
+	#Slot6Sprite {
+		position:absolute;
+		BOTTOM:465px;
+		RIGHT:1167px;
+		z-index:5;
+		-webkit-transform: scale(1, 1);
+	}
+	
+	#Slot6Ball {
+		position:absolute;
+		BOTTOM:465px;
+		LEFT:20px;
+		WIDTH:48px;
+		z-index:2;
+		-webkit-transform: scale(-1, 1);
+	}
+	#Slot6BG {
+		position:absolute;
+		BOTTOM:464px;
+		LEFT:20px;
+		z-index:1;
+		-webkit-transform: scale(-1, 1);
+	}
+	
+	#Slot6Nickname {
+		position:absolute;
+		BOTTOM:481px;
+		RIGHT:1275px;
+		z-index:3;
+		font-size:50px;
+		color: white;
+		font-family: "Pokemon GB";
+	}
+		#Slot6Level {
+		position:absolute;
+		BOTTOM:530px;
+		LEFT:30px;
+		z-index:3;
+		font-size:15px;
+		color: white;
+		font-family: "Pokemon GB";
+	}
+	
