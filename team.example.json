@@ -1,50 +1,50 @@
-var TeamInfo = {
-  "TeamMember1": {
-    "DexNo": 68,
-    "Nickname": "Sven",
-    "Ball": "ultra",
-    "IsShiny": 0,
-    "BackgroundColour": "purple",
-    "Level": 100
+{
+  "slot1": {
+    "dexnumber": 68,
+    "nickname": "Sven",
+    "ball": "ultra",
+    "shiny": 0,
+    "bg": "purple",
+    "level": 100
   },
-  "TeamMember2": {
-    "DexNo": 103,
-    "Nickname": "Treant",
-    "Ball": "master",
-    "IsShiny": 0,
-    "BackgroundColour": "silver",
-    "Level": 83
+  "slot2": {
+    "dexnumber": 103,
+    "nickname": "Treant",
+    "ball": "master",
+    "shiny": 0,
+    "bg": "silver",
+    "level": 83
   },
-  "TeamMember3": {
-    "DexNo": 25,
-    "Nickname": "PeekAtChu",
-    "Ball": "great",
-    "IsShiny": 0,
-    "BackgroundColour": "brown",
-    "Level": 93
+  "slot3": {
+    "dexnumber": 25,
+    "nickname": "PeekAtChu",
+    "ball": "great",
+    "shiny": 0,
+    "bg": "brown",
+    "level": 93
   },
-  "TeamMember4": {
-    "DexNo": "073",
-    "Nickname": "DopeSquid",
-    "Ball": "poke",
-    "IsShiny": 0,
-    "BackgroundColour": "yellow",
-    "Level": 5
+  "slot4": {
+    "dexnumber": 73,
+    "nickname": "DopeSquid",
+    "ball": "poke",
+    "shiny": 0,
+    "bg": "yellow",
+    "level": 5
   },
-  "TeamMember5": {
-    "DexNo": "382",
-    "Nickname": "BlueFish",
-    "Ball": "heavy",
-    "IsShiny": 1,
-    "BackgroundColour": "pink",
-    "Level": 7
+  "slot5": {
+    "dexnumber": 382,
+    "nickname": "BlueFish",
+    "ball": "heavy",
+    "shiny": 1,
+    "bg": "pink",
+    "level": 7
   },
-  "TeamMember6": {
-    "DexNo": "384",
-    "Nickname": "Dragon",
-    "Ball": "timer",
-    "IsShiny": 0,
-    "BackgroundColour": "blue",
-    "Level": 70
+  "slot6": {
+    "dexnumber": 384,
+    "nickname": "Dragon",
+    "ball": "timer",
+    "shiny": 0,
+    "bg": "blue",
+    "level": 70
   }
 }
