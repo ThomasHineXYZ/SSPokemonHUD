@@ -1,7 +1,2 @@
-BACKUPS/
-balls/
-bg_colors/
-fonts/
-sprites/
-sprites_s/
-SSPokemonHUD-assets.zip
+.sass-cache/
+team.json
