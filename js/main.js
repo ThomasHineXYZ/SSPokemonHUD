@@ -1,3 +1,32 @@
+// Load Reference Data First
+function grabCSV(title, filename) {
+    return $.ajax({
+        type: "GET",
+        url: filename,
+        dataType: "text",
+        success: function(data) {
+            console.log("Successfully loaded: " + title)
+        }
+    });
+};
+
+function csvToObject(input) {
+    var output = Papa.parse(
+        input,
+        {
+            header: true,
+            trimHeader: true,
+            dynamicTyping: true,
+            skipEmptyLines: true,
+            chunk: undefined,
+            fastMode: undefined,
+            beforeFirstChunk: undefined,
+            withCredentials: undefined
+        }
+    );
+    return output;
+}
+
 var teamString = "";
 var teamArray = [];
 /**
@@ -12,6 +41,8 @@ function grabTeam(){
         if (teamString !== JSON.stringify(data)) {
             teamString = JSON.stringify(data);
             teamArray = data;
+            console.log("Current Team Data:");
+            console.log(data);
             populateTeam(data);
         }
     });
@@ -44,7 +75,11 @@ function populateTeam(teamData){
         $(".team #" + index + " .ball").attr("src", "assets/balls/" + val.ball + ".png");
 
         // Nickname
-        $(".team #" + index + " .nickname").text(val.nickname);
+        if (val.nickname != "") {
+            $(".team #" + index + " .nickname").text(val.nickname);
+        } else {
+            $(".team #" + index + " .nickname").text(val.nickname);
+        }
 
         // Level
         if (val.level == 0) {
@@ -72,6 +107,18 @@ function pad(num, size) {
 }
 
 $(document).ready(function() {
-    grabTeam();
-    setInterval(grabTeam, 500);
+    $.when(
+        grabCSV("Pokemon", "luts/pokemon.csv"),
+        grabCSV("Pokemon Types", "luts/pokemon_types.csv")
+    ).done(function(
+        pokemonCSV,
+        pokemonTypesCSV
+    ){
+        var baseReference = csvToObject(pokemonCSV[0]);
+        var pokemonTypesReference = csvToObject(pokemonTypesCSV[0]);
+        console.log(baseReference);
+
+        grabTeam();
+        setInterval(grabTeam, 500);
+    });
 });

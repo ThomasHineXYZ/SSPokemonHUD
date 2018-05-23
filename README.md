@@ -31,4 +31,4 @@ A rather simple description of what each folder is responsible for.
 ## JS Libraries Used
 
 * jQuery `3.3.1`
-* jQuery-CSV `0.8.9`
+* Papa Parse `v4.4.0`
