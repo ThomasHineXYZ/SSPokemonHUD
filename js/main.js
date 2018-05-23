@@ -59,8 +59,10 @@ function grabTeam(){
 function populateTeam(teamData){
     var counter = 1;
     $.each(teamData, function(index, val) {
-        // Sets the background WIP
-        $(".team #" + index + " .bg").attr("src", "assets/bg_colors/" + val.bg + ".jpg");
+        // Sets the background by grabbing the "colour" of the Pokemon, then setting that
+        var colour = colours[pkmnSpecies[val.dexnumber].color_id].identifier;
+        $("#" + index).css("background-image", "url(assets/bg_colors/" + colour + ".jpg)");
+        console.log(colour);
 
         // Pads on a 0 or two if needed, so the file look ups are correct
         var dexNumber = pad(val.dexnumber, 3);
@@ -77,7 +79,7 @@ function populateTeam(teamData){
         if (val.nickname != "") {
             $(".team #" + index + " .nickname").text(val.nickname);
         } else {
-            $(".team #" + index + " .nickname").text(val.nickname);
+            $(".team #" + index + " .nickname").text(basePkmn[val.dexnumber].identifier);
         }
 
         // Level
@@ -86,6 +88,9 @@ function populateTeam(teamData){
         } else {
             $(".team #" + index + " .level").text("Lv. " + val.level);
         }
+
+        console.log(val.dexnumber + ": " + basePkmn[val.dexnumber].identifier);
+        console.log(basePkmn);
     });
 
     return true;
@@ -121,12 +126,24 @@ $(document).ready(function() {
         pokemonTypesCSV,
         typesCSV
     ){
-        colours = csvToObject(coloursCSV[0]);
-        basePkmn = csvToObject(pokemonCSV[0]);
-        pkmnSpecies = csvToObject(pokemonSpeciesCSV[0]);
-        pkmnTypes = csvToObject(pokemonTypesCSV[0]);
-        types = csvToObject(typesCSV[0]);
+        // Adding a blank first row to keep numbering correct
+        colours = csvToObject(coloursCSV[0]).data;
+        colours.unshift({});
 
+        basePkmn = csvToObject(pokemonCSV[0]).data;
+        basePkmn.unshift({});
+
+        // Adding a blank first row to keep numbering correct
+        pkmnSpecies = csvToObject(pokemonSpeciesCSV[0]).data;
+        pkmnSpecies.unshift({});
+
+        pkmnTypes = csvToObject(pokemonTypesCSV[0]).data;
+        pkmnTypes.unshift({});
+
+        types = csvToObject(typesCSV[0]).data;
+        types.unshift({});
+
+        // And finally, grab the team data, and set up a loop
         grabTeam();
         setInterval(grabTeam, 500);
     });
