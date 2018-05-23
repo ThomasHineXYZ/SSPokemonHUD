@@ -63,7 +63,6 @@ function populateTeam(teamData){
             // Sets the background by grabbing the "colour" of the Pokemon, then setting that
             var colour = colours[pkmnSpecies[val.dexnumber].color_id].identifier;
             $("#" + index).css("background-image", "url(assets/bg_colors/" + colour + ".png)");
-            console.log(colour);
 
             // Pads on a 0 or two if needed, so the file look ups are correct
             var dexNumber = pad(val.dexnumber, 3);

@@ -15,7 +15,7 @@ Make a copy of `team.example.json` and name it `team.json` to get started.
 ## Resources
 You will need to download and put these in the correct folders (and unzip them if needed):
 
-* [Assets Pack](http://www.mediafire.com/download/1m8bm8mj8z1ozrd/SSPokemonHUD-assets.zip) ([backup link](https://mega.nz/#!MddziApS!lGOZm1ZIleFFByirBnQtEqmt_86lbQvBG1kAjLWdxJQ)) - put contents in the `assets/` folder
+* [Assets Pack](http://www.mediafire.com/file/1m8bm8mj8z1ozrd/SSPokemonHUD-assets.zip) ([backup link](https://mega.nz/#!cUlURKyA!lbQVYxW3pyC6v8rOHfxLR-IS7jMpL5FyfGWRAbc-1Dg)) - put contents in the `assets/` folder
 * [Pokemon GB Fonts](http://www.fontspace.com/jackster-productions/pokemon-gb) - put contents in the `fonts/` folder
 
 ## Folder Info
