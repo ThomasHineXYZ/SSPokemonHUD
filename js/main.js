@@ -27,13 +27,12 @@ function csvToObject(input) {
     return output;
 }
 
-var teamString = "";
-var teamArray = [];
 /**
  * Grabs the team data from the JSON file, and then runs the populate function
  *
  * @return {boolean}
  */
+var teamString, teamArray;
 function grabTeam(){
     var teamFile = "team.json";
     $.getJSON(teamFile, {
@@ -98,7 +97,7 @@ function populateTeam(teamData){
  * @param  {string} num     Input number
  * @param  {int}    size    Desired length of the number string
  *
- * @return {[type]}      [description]
+ * @return {string}         Fixed string, with the leading zeroes
  */
 function pad(num, size) {
     var s = num+"";
@@ -106,17 +105,27 @@ function pad(num, size) {
     return s;
 }
 
+// Loads up all of the LUT files, then loads the team
+var colours, basePkmn, pkmnTypes, types;
 $(document).ready(function() {
     $.when(
+        grabCSV("Colours", "luts/colors.csv"),
         grabCSV("Pokemon", "luts/pokemon.csv"),
-        grabCSV("Pokemon Types", "luts/pokemon_types.csv")
+        grabCSV("Pokemon Species", "luts/pokemon_species.csv"),
+        grabCSV("Pokemon Types", "luts/pokemon_types.csv"),
+        grabCSV("Types", "luts/types.csv")
     ).done(function(
+        coloursCSV,
         pokemonCSV,
-        pokemonTypesCSV
+        pokemonSpeciesCSV,
+        pokemonTypesCSV,
+        typesCSV
     ){
-        var baseReference = csvToObject(pokemonCSV[0]);
-        var pokemonTypesReference = csvToObject(pokemonTypesCSV[0]);
-        console.log(baseReference);
+        colours = csvToObject(coloursCSV[0]);
+        basePkmn = csvToObject(pokemonCSV[0]);
+        pkmnSpecies = csvToObject(pokemonSpeciesCSV[0]);
+        pkmnTypes = csvToObject(pokemonTypesCSV[0]);
+        types = csvToObject(typesCSV[0]);
 
         grabTeam();
         setInterval(grabTeam, 500);
