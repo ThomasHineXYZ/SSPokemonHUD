@@ -1,9 +1,0 @@
-CSV notes
-
-pokemon.csv							- ID, lowecase name
-pokemon_colors.csv					- color names and color_ids
-pokemon_dex_numbers.csv				-
-pokemon_species.csv					-
-pokemon_species_names.csv			-
-pokemon_types.csv					-
-types.csv							-
