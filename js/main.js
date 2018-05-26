@@ -29,14 +29,9 @@ function csvToObject(input) {
  * @return {boolean}
  */
 var teamString;
-var oldTeamArray = {
-    "slot1": {},
-    "slot2": {},
-    "slot3": {},
-    "slot4": {},
-    "slot5": {},
-    "slot6": {}
-}
+var oldTeamArray = { // Needs a blank set of slots for initial comparison
+    "slot1": {}, "slot2": {}, "slot3": {}, "slot4": {}, "slot5": {}, "slot6": {}
+};
 function grabTeam(){
     var teamFile = "team.json";
     $.getJSON(teamFile, {
@@ -63,14 +58,9 @@ function grabTeam(){
  */
 function populateTeam(teamData, oldTeamData){
     $.each(teamData, function(slotID, slot) {
-        console.log(oldTeamData[slotID].dexnumber + " : " + teamData[slotID].dexnumber);
 
         // If the slot's values haven't changed, don't touch it at all
         if (JSON.stringify(oldTeamData[slotID]) == JSON.stringify(teamData[slotID])) {
-            console.log("Old:");
-            console.log(oldTeamData[slotID]);
-            console.log("New:");
-            console.log(teamData[slotID]);
             return;
         }
 
