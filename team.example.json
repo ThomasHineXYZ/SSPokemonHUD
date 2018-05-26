@@ -4,7 +4,6 @@
     "nickname": "Sven",
     "ball": "ultra",
     "shiny": 0,
-    "bg": "purple",
     "level": 100
   },
   "slot2": {
@@ -12,7 +11,6 @@
     "nickname": "Treant",
     "ball": "master",
     "shiny": 0,
-    "bg": "silver",
     "level": 83
   },
   "slot3": {
@@ -20,7 +18,6 @@
     "nickname": "PeekAtChu",
     "ball": "great",
     "shiny": 0,
-    "bg": "brown",
     "level": 93
   },
   "slot4": {
@@ -28,7 +25,6 @@
     "nickname": "DopeSquid",
     "ball": "poke",
     "shiny": 0,
-    "bg": "yellow",
     "level": 5
   },
   "slot5": {
@@ -36,7 +32,6 @@
     "nickname": "BlueFish",
     "ball": "heavy",
     "shiny": 1,
-    "bg": "pink",
     "level": 7
   },
   "slot6": {
@@ -44,7 +39,6 @@
     "nickname": "Dragon",
     "ball": "timer",
     "shiny": 0,
-    "bg": "blue",
     "level": 70
   }
 }

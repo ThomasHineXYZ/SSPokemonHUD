@@ -17,11 +17,7 @@ function csvToObject(input) {
             header: true,
             trimHeader: true,
             dynamicTyping: true,
-            skipEmptyLines: true,
-            chunk: undefined,
-            fastMode: undefined,
-            beforeFirstChunk: undefined,
-            withCredentials: undefined
+            skipEmptyLines: true
         }
     );
     return output;
