@@ -28,7 +28,15 @@ function csvToObject(input) {
  *
  * @return {boolean}
  */
-var teamString, teamArray;
+var teamString;
+var oldTeamArray = {
+    "slot1": {},
+    "slot2": {},
+    "slot3": {},
+    "slot4": {},
+    "slot5": {},
+    "slot6": {}
+}
 function grabTeam(){
     var teamFile = "team.json";
     $.getJSON(teamFile, {
@@ -37,8 +45,9 @@ function grabTeam(){
             teamString = JSON.stringify(data);
             teamArray = data;
             console.log("Current Team Data:");
-            console.log(data);
-            populateTeam(data);
+            console.log(teamArray);
+            populateTeam(teamArray, oldTeamArray);
+            oldTeamArray = teamArray;
         }
     });
 
@@ -52,9 +61,20 @@ function grabTeam(){
  *
  * @return {boolean}
  */
-function populateTeam(teamData){
-    var counter = 1;
+function populateTeam(teamData, oldTeamData){
     $.each(teamData, function(slotID, slot) {
+        console.log(oldTeamData[slotID].dexnumber + " : " + teamData[slotID].dexnumber);
+
+        // If the slot's values haven't changed, don't touch it at all
+        if (JSON.stringify(oldTeamData[slotID]) == JSON.stringify(teamData[slotID])) {
+            console.log("Old:");
+            console.log(oldTeamData[slotID]);
+            console.log("New:");
+            console.log(teamData[slotID]);
+            return;
+        }
+
+        // Otherwise, run like normal
         var dexNumber = slot.dexnumber;
         if (dexNumber >= 1) {
             // Sets the background by grabbing the "colour" of the Pokemon, then setting that
@@ -62,7 +82,7 @@ function populateTeam(teamData){
             var colour = colours[colour_id].identifier;
             $("#" + slotID).css("background-image", "url(assets/bg_colors/" + colour + ".png)");
 
-            // Pads on a 0 or two if needed, so the file look ups are correct
+            // Pads on a 0 or two 0's if needed, so the file look ups are correct
             var paddedDexNumber = pad(dexNumber, 3);
             if (slot.shiny == false) {
                 $("#" + slotID + " .sprite").attr("src", "assets/sprites/" + paddedDexNumber + ".gif");
