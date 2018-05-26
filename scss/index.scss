@@ -24,6 +24,24 @@ body {
     margin-bottom: -1px;
 }
 
+body.stagger {
+    .team {
+        #slot2,
+        #slot4,
+        #slot6 {
+            .sprite {
+                // Flip it back
+                -moz-transform: scaleX(1);
+                -o-transform: scaleX(1);
+                -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+                filter: "";
+                -ms-filter: "";
+            }
+        }
+    }
+}
+
 .team {
     #slot1,
     #slot2,
@@ -45,6 +63,14 @@ body {
         max-height: $height;
         padding-left: 5px;
         padding-right: 5px;
+
+        // Flip it
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
     }
 
     .nickname,

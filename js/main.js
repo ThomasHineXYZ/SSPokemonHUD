@@ -64,7 +64,7 @@ function populateTeam(teamData){
 
             // Pads on a 0 or two if needed, so the file look ups are correct
             var paddedDexNumber = pad(dexNumber, 3);
-            if (slot.shiny === false) {
+            if (slot.shiny == false) {
                 $("#" + slotID + " .sprite").attr("src", "assets/sprites/" + paddedDexNumber + ".gif");
             } else {
                 $("#" + slotID + " .sprite").attr("src", "assets/sprites_s/" + paddedDexNumber + ".gif");
