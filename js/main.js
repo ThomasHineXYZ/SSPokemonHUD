@@ -54,52 +54,55 @@ function grabTeam(){
  */
 function populateTeam(teamData){
     var counter = 1;
-    $.each(teamData, function(index, val) {
-        if (val.dexnumber >= 1) {
+    $.each(teamData, function(slotID, slot) {
+        var dexNumber = slot.dexnumber;
+        if (dexNumber >= 1) {
             // Sets the background by grabbing the "colour" of the Pokemon, then setting that
-            var colour = colours[pkmnSpecies[val.dexnumber].color_id].identifier;
-            $("#" + index).css("background-image", "url(assets/bg_colors/" + colour + ".png)");
+            var colour_id = pkmnSpecies[dexNumber].color_id;
+            var colour = colours[colour_id].identifier;
+            $("#" + slotID).css("background-image", "url(assets/bg_colors/" + colour + ".png)");
 
             // Pads on a 0 or two if needed, so the file look ups are correct
-            var dexNumber = pad(val.dexnumber, 3);
-            if (val.shiny == 0) {
-                $("#" + index + " .sprite").attr("src", "assets/sprites/" + dexNumber + ".gif");
+            var paddedDexNumber = pad(dexNumber, 3);
+            if (slot.shiny === false) {
+                $("#" + slotID + " .sprite").attr("src", "assets/sprites/" + paddedDexNumber + ".gif");
             } else {
-                $("#" + index + " .sprite").attr("src", "assets/sprites_s/" + dexNumber + ".gif");
+                $("#" + slotID + " .sprite").attr("src", "assets/sprites_s/" + paddedDexNumber + ".gif");
             }
 
             // Captured Pokeball
-            $("#" + index + " .ball").attr("src", "assets/balls/" + val.ball + ".png");
+            $("#" + slotID + " .ball").attr("src", "assets/balls/" + slot.ball + ".png");
 
             // Nickname
-            if (val.nickname != "") {
-                $("#" + index + " .nickname").text(val.nickname);
+            if (slot.nickname != "") {
+                $("#" + slotID + " .nickname").text(slot.nickname);
             } else {
-                $("#" + index + " .nickname").text(basePkmn[val.dexnumber].identifier);
+                $("#" + slotID + " .nickname").text(basePkmn[dexNumber].identifier);
             }
 
             // Level
-            $("#" + index + " .level").text("Lv. " + val.level);
+            $("#" + slotID + " .level").text("Lv. " + slot.level);
 
-        } else if (val.dexnumber == -1) {
+        } else if (dexNumber == -1) {
             // If it's an egg
-            $("#" + index).css("background-image", "url(assets/bg_colors/white.png)");
-            $("#" + index + " .sprite").attr("src", "assets/sprites/egg.gif");
-            $("#" + index + " .ball").attr("src", "assets/balls/poke.png");
-            $("#" + index + " .nickname").text("");
-            $("#" + index + " .level").text("");
+            $("#" + slotID).css("background-image", "url(assets/bg_colors/white.png)");
+            $("#" + slotID + " .sprite").attr("src", "assets/sprites/egg.gif");
+            $("#" + slotID + " .ball").attr("src", "assets/balls/poke.png");
+            $("#" + slotID + " .nickname").text("");
+            $("#" + slotID + " .level").text("");
 
-        } else if (val.dexnumber == 0) {
+        } else if (dexNumber == 0) {
             // If it's empty
-            $("#" + index).css("background-image", "url(assets/bg_colors/none.png)");
+            $("#" + slotID).css("background-image", "url(assets/bg_colors/none.png)");
 
             // Set's the sprite and ball to a 1px x 1px pixel transparent GIF
-            $("#" + index + " .sprite").attr("src", "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
-            $("#" + index + " .ball").attr("src", "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
+            var blankGIF = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
+            $("#" + slotID + " .sprite").attr("src", blankGIF);
+            $("#" + slotID + " .ball").attr("src", blankGIF);
 
             // And empty the text areas
-            $("#" + index + " .nickname").text("");
-            $("#" + index + " .level").text("");
+            $("#" + slotID + " .nickname").text("");
+            $("#" + slotID + " .level").text("");
 
         }
     });
@@ -121,7 +124,7 @@ function pad(num, size) {
     return s;
 }
 
-// Loads up all of the LUT files, then loads the team
+// Loads up all of the LUT (look up table) files, then loads the team, and finally sets the check interval
 var colours, basePkmn, pkmnTypes, types;
 $(document).ready(function() {
     $.when(
