@@ -1,5 +1,3 @@
-$height: 90px;
-
 body {
     background: #1E1E1E;
     color: #888888;
@@ -15,7 +13,7 @@ body {
 
 .slot {
     background: #000000;
-    height: $height;
+    height: 90px;
 
     border: 1px solid #555555;
 
@@ -42,7 +40,7 @@ body {
 
 .sprite {
     max-width: 150px;
-    max-height: $height;
+    max-height: 85px;
 
     // Flip it
     -moz-transform: scaleX(-1);
