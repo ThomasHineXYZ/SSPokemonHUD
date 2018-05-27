@@ -56,6 +56,7 @@ function grabTeam(){
  *
  * @return {boolean}
  */
+var blankGIF = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
 function populateTeam(teamData, oldTeamData){
     $.each(teamData, function(slotID, slot) {
 
@@ -81,7 +82,11 @@ function populateTeam(teamData, oldTeamData){
             }
 
             // Captured Pokeball
-            $("#" + slotID + " .ball").attr("src", "assets/balls/" + slot.ball + ".png");
+            if (slot.ball != "") {
+                $("#" + slotID + " .ball").attr("src", "assets/balls/" + slot.ball + ".png");
+            } else {
+                $("#" + slotID + " .ball").attr("src", blankGIF);
+            }
 
             // Nickname
             if (slot.nickname != "") {
@@ -97,7 +102,13 @@ function populateTeam(teamData, oldTeamData){
             // If it's an egg
             $("#" + slotID).css("background-image", "url(assets/bg_colors/white.png)");
             $("#" + slotID + " .sprite").attr("src", "assets/sprites/egg.gif");
-            $("#" + slotID + " .ball").attr("src", "assets/balls/poke.png");
+
+            if (slot.ball != "") {
+                $("#" + slotID + " .ball").attr("src", "assets/balls/" + slot.ball + ".png");
+            } else {
+                $("#" + slotID + " .ball").attr("src", blankGIF);
+            }
+
             $("#" + slotID + " .nickname").text("");
             $("#" + slotID + " .level").text("");
 
@@ -106,7 +117,6 @@ function populateTeam(teamData, oldTeamData){
             $("#" + slotID).css("background-image", "url(assets/bg_colors/none.png)");
 
             // Set's the sprite and ball to a 1px x 1px pixel transparent GIF
-            var blankGIF = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
             $("#" + slotID + " .sprite").attr("src", blankGIF);
             $("#" + slotID + " .ball").attr("src", blankGIF);
 
@@ -154,6 +164,7 @@ $(document).ready(function() {
         colours = csvToObject(coloursCSV[0]).data;
         colours.unshift({});
 
+        // Adding a blank first row to keep numbering correct
         basePkmn = csvToObject(pokemonCSV[0]).data;
         basePkmn.unshift({});
 
@@ -161,11 +172,14 @@ $(document).ready(function() {
         pkmnSpecies = csvToObject(pokemonSpeciesCSV[0]).data;
         pkmnSpecies.unshift({});
 
+        // Adding a blank first row to keep numbering correct
         pkmnTypes = csvToObject(pokemonTypesCSV[0]).data;
         pkmnTypes.unshift({});
 
+        // Adding a blank first row to keep numbering correct
         types = csvToObject(typesCSV[0]).data;
         types.unshift({});
+
         // And finally, grab the team data, and set up a loop
         grabTeam();
         setInterval(grabTeam, 500);

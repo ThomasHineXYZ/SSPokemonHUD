@@ -1,18 +1,16 @@
 $height: 90px;
 
-html {
-    //min-height: 100%;
-}
-
 body {
     background: #1E1E1E;
     color: #888888;
 }
 
-.container {
+.team {
+    // CSS Grid Stuff
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 25px;
 }
 
 .slot {
@@ -20,10 +18,69 @@ body {
     height: $height;
 
     border: 1px solid #555555;
-    margin-left: -1px;
-    margin-bottom: -1px;
+
+    // CSSGrid stuff
+    display: inline-grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto;
+    grid-gap: 1px;
 }
 
+#slot1,
+#slot2,
+#slot3,
+#slot4,
+#slot5,
+#slot6 {
+    background-image: url("../assets/bg_colors/none.jpg");
+    background-repeat: no-repeat;
+}
+
+.ball {
+    width: 24px;
+}
+
+.sprite {
+    max-width: 150px;
+    max-height: $height;
+
+    // Flip it
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.nickname,
+.level {
+    color: #FFFFFF;
+    font-family: "PokemonGB";
+}
+
+.info-wrapper,
+.nickname,
+.level,
+.sprite-wrapper {
+    display: inline-block;
+
+    &:after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+    }
+}
+
+.nickname {
+    font-size: 30px;
+}
+
+.level {
+    font-size: 12px;
+}
+
+// If the user wants to stagger the way that the slots are facing
 body.stagger {
     .team {
         #slot2,
@@ -41,52 +98,3 @@ body.stagger {
         }
     }
 }
-
-.team {
-    #slot1,
-    #slot2,
-    #slot3,
-    #slot4,
-    #slot5,
-    #slot6 {
-        background-image: url("../assets/bg_colors/none.jpg");
-        background-repeat: no-repeat;
-    }
-
-    .ball {
-        z-index: 2;
-        width: 24px;
-    }
-
-    .sprite {
-        max-width: 150px;
-        max-height: $height;
-        padding-left: 5px;
-        padding-right: 5px;
-
-        // Flip it
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
-    }
-
-    .nickname,
-    .level {
-        z-index: 3;
-        color: #FFFFFF;
-        font-family: "PokemonGB";
-    }
-
-    .nickname {
-        font-size: 30px;
-    }
-
-    .level {
-        font-size: 12px;
-    }
-}
-
-
