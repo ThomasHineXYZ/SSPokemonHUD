@@ -92,7 +92,7 @@ function populateTeam(teamData, oldTeamData){
             if (slot.nickname != "") {
                 $("#" + slotID + " .nickname").text(slot.nickname);
             } else {
-                $("#" + slotID + " .nickname").text(basePkmn[dexNumber].identifier);
+                $("#" + slotID + " .nickname").text(pkmnNames[dexNumber].name);
             }
 
             // Level
@@ -144,18 +144,32 @@ function pad(num, size) {
     return s;
 }
 
+function cleanLocale(names, languageID) {
+    var cleanedNames = []
+    $.each(names, function(line, name) {
+        if (name.local_language_id == languageID) {
+            cleanedNames.push(name);
+            console.log("Cleaned Pokemon Names");
+        }
+    });
+
+    return cleanedNames;
+}
+
 // Loads up all of the LUT (look up table) files, then loads the team, and finally sets the check interval
 var colours, basePkmn, pkmnTypes, types;
 $(document).ready(function() {
     $.when(
         grabCSV("Colours", "luts/colors.csv"),
         grabCSV("Pokemon", "luts/pokemon.csv"),
+        grabCSV("Pokemon Names", "luts/pokemon_names.csv"),
         grabCSV("Pokemon Species", "luts/pokemon_species.csv"),
         grabCSV("Pokemon Types", "luts/pokemon_types.csv"),
         grabCSV("Types", "luts/types.csv")
     ).done(function(
         coloursCSV,
         pokemonCSV,
+        pokemonNamesCSV,
         pokemonSpeciesCSV,
         pokemonTypesCSV,
         typesCSV
@@ -167,6 +181,12 @@ $(document).ready(function() {
         // Adding a blank first row to keep numbering correct
         basePkmn = csvToObject(pokemonCSV[0]).data;
         basePkmn.unshift({});
+
+        // Adding a blank first row to keep numbering correct
+        pkmnNames = csvToObject(pokemonNamesCSV[0]).data;
+        pkmnNames.unshift({});
+        pkmnNames = cleanLocale(pkmnNames, 9);
+        pkmnNames.unshift({});
 
         // Adding a blank first row to keep numbering correct
         pkmnSpecies = csvToObject(pokemonSpeciesCSV[0]).data;
