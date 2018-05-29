@@ -102,7 +102,10 @@ function populateTeam(teamData, oldTeamData){
 
         } else if (dexNumber == -1) {
             // If it's an egg
-            $("#" + slotID).css("background-image", "url(assets/bg_colors/white.png)");
+            $("#" + slotID).removeClass();
+            $("#" + slotID).addClass('slot');
+            $("#" + slotID).addClass('bg-white');
+
             $("#" + slotID + " .sprite").attr("src", "assets/sprites/egg.gif");
 
             if (slot.ball != "") {
@@ -116,7 +119,9 @@ function populateTeam(teamData, oldTeamData){
 
         } else if (dexNumber == 0) {
             // If it's empty
-            $("#" + slotID).css("background-image", "url(assets/bg_colors/none.png)");
+            $("#" + slotID).removeClass();
+            $("#" + slotID).addClass('slot');
+            $("#" + slotID).addClass('bg-none');
 
             // Set's the sprite and ball to a 1px x 1px pixel transparent GIF
             $("#" + slotID + " .sprite").attr("src", blankGIF);
