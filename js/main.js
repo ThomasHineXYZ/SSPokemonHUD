@@ -69,9 +69,11 @@ function populateTeam(teamData, oldTeamData){
         var dexNumber = slot.dexnumber;
         if (dexNumber >= 1) {
             // Sets the background by grabbing the "colour" of the Pokemon, then setting that
+            $("#" + slotID).removeClass();
+            $("#" + slotID).addClass('slot');
             var colour_id = pkmnSpecies[dexNumber].color_id;
             var colour = colours[colour_id].identifier;
-            $("#" + slotID).css("background-image", "url(assets/bg_colors/" + colour + ".png)");
+            $("#" + slotID).addClass('bg-' + colour);
 
             // Pads on a 0 or two 0's if needed, so the file look ups are correct
             var paddedDexNumber = pad(dexNumber, 3);
@@ -149,10 +151,10 @@ function cleanLocale(names, languageID) {
     $.each(names, function(line, name) {
         if (name.local_language_id == languageID) {
             cleanedNames.push(name);
-            console.log("Cleaned Pokemon Names");
         }
     });
 
+    console.log("Cleaned Pokemon Names");
     return cleanedNames;
 }
 
