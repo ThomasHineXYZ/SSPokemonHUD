@@ -1,12 +1,15 @@
 body {
+    min-width: 730px;
+    min-height: 570px;
+
     background-color: #1E1E1E;
+
     font-size: 100%;
     color: #FFFFFF;
     font-family: "PokemonGB";
 }
 
 .team {
-    // CSS Grid Stuff
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -18,7 +21,6 @@ body {
 
     border: 1px solid #555555;
 
-    // CSSGrid stuff
     display: inline-grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: auto;
@@ -106,13 +108,13 @@ $bg-colours: (
 .info-wrapper {
     position: relative;
 
-    span.nickname {
+    .nickname {
         position: absolute;
         bottom: 0;
         left: 0;
     }
 
-    span.level {
+    .level {
         padding-top: 5px;
         position: absolute;
         top: 0;
@@ -126,19 +128,47 @@ body.stagger {
         #slot2,
         #slot4,
         #slot6 {
-            .sprite {
-                // Flip it back
-                -moz-transform: scaleX(1);
-                -o-transform: scaleX(1);
-                -webkit-transform: scaleX(1);
-                transform: scaleX(1);
-                filter: "";
-                -ms-filter: "";
-            }
-        }
+            -moz-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            transform: scaleX(-1);
+            -ms-filter: fliph; /*IE*/
+            filter: fliph; /*IE*/
 
-        .slot {
-            grid-template-columns: 4fr 1fr;
+            .info-wrapper, {
+                -moz-transform: scaleX(-1);
+                -webkit-transform: scaleX(-1);
+                -o-transform: scaleX(-1);
+                transform: scaleX(-1);
+                -ms-filter: fliph; /*IE*/
+                filter: fliph; /*IE*/
+
+                position: relative;
+            }
+
+            .ball-wrapper {
+                -moz-transform: scaleX(-1);
+                -webkit-transform: scaleX(-1);
+                -o-transform: scaleX(-1);
+                transform: scaleX(-1);
+                -ms-filter: fliph; /*IE*/
+                filter: fliph; /*IE*/
+            }
+
+            .nickname {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: auto;
+            }
+
+            .level {
+                padding-top: 5px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: auto;
+            }
         }
     }
 }

@@ -163,8 +163,17 @@ function cleanLocale(names, languageID) {
     return cleanedNames;
 }
 
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
 // Loads up all of the LUT (look up table) files, then loads the team, and finally sets the check interval
 var colours, basePkmn, pkmnTypes, types;
+var getVars = getUrlVars();
 $(document).ready(function() {
     $.when(
         grabCSV("Colours", "luts/colors.csv"),
@@ -211,4 +220,10 @@ $(document).ready(function() {
         grabTeam();
         setInterval(grabTeam, 500);
     });
+
+    // Sets the stagger effect, if enabled
+    console.log(getVars["stagger"]);
+    if (getVars["stagger"] == "true") {
+        $("body").addClass('stagger');
+    }
 });
