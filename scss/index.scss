@@ -1,6 +1,8 @@
 body {
     background-color: #1E1E1E;
-    color: #888888;
+    font-size: 100%;
+    color: #FFFFFF;
+    font-family: "PokemonGB";
 }
 
 .team {
@@ -23,16 +25,6 @@ body {
     grid-gap: 1px;
 }
 
-#slot1,
-#slot2,
-#slot3,
-#slot4,
-#slot5,
-#slot6 {
-    //background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 75%);
-    background-repeat: no-repeat;
-}
-
 $bg-colours: (
     "black": #505050,
     "blue": #1E90FF,
@@ -47,19 +39,25 @@ $bg-colours: (
     "none": #333333
 );
 
-@each $name, $colour in $bg-colours {
-    .bg-#{$name} {
-        background-image: linear-gradient(to right, $colour, rgba(0, 0, 0, 0) 75%);
+#slot1,
+#slot2,
+#slot3,
+#slot4,
+#slot5,
+#slot6 {
+    background-repeat: no-repeat;
+    @each $name, $colour in $bg-colours {
+        &.bg-#{$name} {
+            background-image: linear-gradient(to right, $colour, rgba(0, 0, 0, 0) 75%);
+        }
     }
 }
 
-.ball {
-    width: 24px;
-}
-
 .sprite {
-    max-width: 150px;
+    max-width: 125px;
     max-height: 85px;
+
+    z-index: 10;
 
     // Flip it
     -moz-transform: scaleX(-1);
@@ -70,40 +68,56 @@ $bg-colours: (
     -ms-filter: "FlipH";
 }
 
+.ball {
+    z-index: 1;
+}
+
+.nickname {
+    font-size: 2em;
+}
+
+.level {
+    font-size: 0.7em;
+}
+
 .sprite-wrapper {
+    display: inline-block;
     text-align: center;
+    position: relative;
 
     background-image: url("../assets/sprite_background.png");
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: auto 100%;
-}
-
-.nickname,
-.level {
-    color: #FFFFFF;
-    font-family: "PokemonGB";
-}
-
-.info-wrapper,
-.nickname,
-.level,
-.sprite-wrapper {
-    display: inline-block;
+    background-size: auto 90%;
 
     &:after {
         content: "";
         display: inline-block;
         height: 100%;
     }
+
+    span.ball-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }
 
-.nickname {
-    font-size: 30px;
-}
+.info-wrapper {
+    position: relative;
 
-.level {
-    font-size: 12px;
+    span.nickname {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    span.level {
+        padding-top: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }
 
 // If the user wants to stagger the way that the slots are facing
