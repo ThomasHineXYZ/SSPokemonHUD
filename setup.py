@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # Installs and set's up dependancies, if needed.
 
+from shutil import copyfile
 import os
 
 # Check for dependancies
