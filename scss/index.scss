@@ -2,8 +2,6 @@ body {
     min-width: 730px;
     min-height: 570px;
 
-    background-color: #1E1E1E;
-
     font-size: 100%;
     color: #FFFFFF;
     font-family: "PokemonGB";
@@ -18,8 +16,6 @@ body {
 .slot {
     //background-color: #666666;
     height: 90px;
-
-    border: 1px solid #555555;
 
     display: inline-grid;
     grid-template-columns: 1fr 4fr;

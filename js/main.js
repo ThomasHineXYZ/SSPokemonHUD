@@ -221,9 +221,21 @@ $(document).ready(function() {
         setInterval(grabTeam, 500);
     });
 
-    // Sets the stagger effect, if enabled
-    console.log(getVars["stagger"]);
-    if (getVars["stagger"] == "true") {
-        $("body").addClass('stagger');
-    }
+    // Sets up different values depending on the GET values in the URL
+    $(function(){
+        // Sets the background colour, if enabled
+        if (getVars["background"] == "true") {
+            $('body').css('background-color', '#1E1E1E');
+        }
+
+        // Sets the border effect, if enabled
+        if (getVars["border"] == "true") {
+            $('.slot').css('border', '1px solid #555555');
+        }
+
+        // Sets the stagger effect, if enabled
+        if (getVars["stagger"] == "true") {
+            $("body").addClass('stagger');
+        }
+    });
 });
