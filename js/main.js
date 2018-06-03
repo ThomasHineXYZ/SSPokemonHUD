@@ -234,6 +234,33 @@ $(document).ready(function() {
         }
 
         // Sets the stagger effect, if enabled
+        if (getVars["noslotbg"] == "true") {
+            $('#slot1').css('background', 'none');
+            $('#slot1').css('background-image', 'none');
+
+            $('#slot2').css('background', 'none');
+            $('#slot2').css('background-image', 'none');
+
+            $('#slot3').css('background', 'none');
+            $('#slot3').css('background-image', 'none');
+
+            $('#slot4').css('background', 'none');
+            $('#slot4').css('background-image', 'none');
+
+            $('#slot5').css('background', 'none');
+            $('#slot5').css('background-image', 'none');
+
+            $('#slot6').css('background', 'none');
+            $('#slot6').css('background-image', 'none');
+
+        }
+
+        // Sets the stagger effect, if enabled
+        if (getVars["compact"] == "true") {
+            $("body").addClass('compact');
+        }
+
+        // Sets the stagger effect, if enabled
         if (getVars["stagger"] == "true") {
             $("body").addClass('stagger');
         }
