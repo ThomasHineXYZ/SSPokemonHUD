@@ -261,6 +261,11 @@ $(document).ready(function() {
         }
 
         // Sets the stagger effect, if enabled
+        if (getVars["compact"] == "single") {
+            $("body").addClass('single');
+        }
+
+        // Sets the stagger effect, if enabled
         if (getVars["stagger"] == "true") {
             $("body").addClass('stagger');
         }

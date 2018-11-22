@@ -169,17 +169,9 @@ body.stagger {
     }
 }
 
-body.compact {
-    min-width: 290px;
-    min-height: 300px;
-
+body.compact,
+body.single {
     overflow: hide;
-
-    .team {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-    }
 
     .nickname {
         display: none;
@@ -213,5 +205,27 @@ body.compact {
     .sprite {
         max-width: 125px;
         max-height: 85px;
+    }
+}
+
+body.compact {
+    min-width: 290px;
+    min-height: 300px;
+
+    .team {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+
+body.single {
+    min-width: 855px;
+    min-height: 570px;
+
+    .team {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
     }
 }
