@@ -4,7 +4,7 @@ SSPokemonHUD
 SSPokemonHUD is an idea that [ShockSlayer](https://www.youtube.com/c/shockslayer "SS's YouTube Channel") came up with and was starting to work on for his [Twitch streams](https://twitch.tv/shockslayer "SS's Twitch").
 
 ## Premise
-I was wanting to make this as simple as possible. Because of that I have chosen to use a Python based web server. 
+I was wanting to make this as simple as possible. Because of that I have chosen to use a Python based web server.
 To the average person running Windows this just means you have to install one program and woola, you have it working. In Linux, Python is _usually_ pre-installed on the distribution of your choice, so that makes running this super simple.
 
 ## Install Instructions
@@ -51,3 +51,7 @@ A rather simple description of what each folder is responsible for.
 ## Python Libraries Used
 * `Pip` (to install IntelHex)
 * `IntelHex`
+
+## To Do:
+* Switch over to probably dependancy management
+* Clean up the SCSS file

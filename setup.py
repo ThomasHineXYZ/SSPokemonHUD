@@ -26,7 +26,7 @@ except:
 
 # Set's up the team.json if the person forgets
 if not os.path.isfile("team.json"):
-    copyfile("team.example.json", "team.json")
+    copyfile("team.empty_example.json", "team.json")
 
 print("Taadaa!")
 print("All dependancies are installed and ready to go.")
